@@ -66,7 +66,6 @@ public class ClienteDao extends Dao {
 			System.out.println("Não foi possivel excluir o cliente");
 			em.getTransaction().rollback();
 		}
-		em.close();
 
 	}
 
