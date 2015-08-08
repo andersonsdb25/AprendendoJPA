@@ -10,11 +10,11 @@ public class testarJpa {
 
 		// Procedimento para adicionar clientes
 
-		cliente.setNome("Zico");
+		/*cliente.setNome("Zico");
 		cliente.setCpf("10");
 		cliente.setRg("10");
-
-		clienteDao.cadastrar(cliente);
+*/
+		// clienteDao.cadastrar(cliente);
 
 		// Procedimento para excluir objetos
 		/*
@@ -24,7 +24,9 @@ public class testarJpa {
 		// Procedimento para listar dados de uma tabela com JPA
 
 		clienteDao.listarTodosClientes(cliente);
-
+		Cliente pegacli = clienteDao.pegarClientesPorId(2);
+		System.out.println("--------");
+		System.out.println("Cliente pego - Id: " + pegacli.getId() + "Nome " + pegacli.getNome());
 	}
 
 }

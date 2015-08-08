@@ -51,6 +51,17 @@ public class ClienteDao extends Dao {
 
 	}
 
+	// Lista todos os clientes
+	public Cliente pegarClientesPorId(int id) {
+
+		Query query = em.createQuery("from Cliente c where c.id = " + id);
+		// System.out.println("Query Gerada" + query);
+
+		Cliente clientes = (Cliente) query.getSingleResult();
+
+		return clientes;
+	}
+
 	// Exclusao de clientes
 	public void excluir(Cliente cliente) {
 
