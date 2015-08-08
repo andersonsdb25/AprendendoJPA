@@ -22,16 +22,15 @@ public class ClienteDao extends Dao {
 
 	public void cadastrar(Cliente cliente) {
 		em.getTransaction().begin();
-		Cliente client = em.find(Cliente.class, cliente.getCpf());
-		if (cliente == null) {
-
+		try {
 			em.persist(cliente);
 			em.getTransaction().commit();
-		} else {
+
+		} catch (Exception e) {
 			System.out.println("Não foi possivel incluir o Cliente");
-			// em.getTransaction().rollback();
+			em.getTransaction().rollback();
 		}
-		em.close();
+
 	}
 
 	// Lista todos os clientes
